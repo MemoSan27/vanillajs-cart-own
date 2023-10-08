@@ -47,6 +47,10 @@ h2{
     font-size: 2rem;
     font-weight: 900;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
 /** Body **/
 .nav__bar{
     height: 5rem;
@@ -156,6 +160,13 @@ h2{
     gap: 1rem;
     transition-property: box-shadow;
     transition-duration: 400ms;
+}
+.product__link{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    gap: 1rem;
 }
 .product:hover{
     box-shadow: 2px 3px 17px -2px rgba(67,67,67,0.79);
