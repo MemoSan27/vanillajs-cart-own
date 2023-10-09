@@ -89,18 +89,23 @@ a{
     max-width: 35rem;
     height: 40rem;
     top: 5rem;
-    right: 0;
+    right: -100%;
     border-radius: 1rem 0 1rem 1rem;
     padding: 0.5rem;
     border: 2px solid green;
+    transition: right 400ms ease-out;
+}
+.cart-modal.active{
+    right: 0;
+    transition: right 400ms ease-out;
 }
 @media ( min-width: 768px ) { 
-    .cart-modal{
+    .cart-modal.active{
         right: 5rem;
     }
 }
 @media ( min-width: 1200px ) { 
-    .cart-modal{
+    .cart-modal.active{
         right: 8rem;
     }
 }
@@ -124,7 +129,7 @@ a{
     margin-top: 1rem;
 }
 .cart-product__img{
-    width: 28%;
+    width: 23%;
 }
 .cart-modal__details{
     display: flex;
