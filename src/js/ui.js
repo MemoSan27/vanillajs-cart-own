@@ -1,3 +1,4 @@
+
 export const printProducts = ( products ) => {
     const print = document.querySelector('.products');
     let html = '';
@@ -39,6 +40,7 @@ export const getSelector = (products) => {
         console.log(id);
         const article = products.find( product => product.id === id);
         console.log(article);
+        localStorage.setItem('detail', JSON.stringify(article));
         return article;
     });
 }

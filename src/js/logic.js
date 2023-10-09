@@ -5,6 +5,7 @@ export const getApi = async() => {
         const res = await data.json();
         localStorage.setItem('products', JSON.stringify(res));
         localStorage.setItem('cart', JSON.stringify({}));
+        localStorage.setItem('detail', JSON.stringify({}));
         return res;
     }catch(error){
         console.log(error);
@@ -15,6 +16,7 @@ export const database = async() => {
         products:   JSON.parse(localStorage.getItem('products')) || 
                     await getApi(),
         cart:       JSON.parse(localStorage.getItem('cart')) || {},
+        detail:     JSON.parse(localStorage.getItem('detail')) || {},
     };
     return db;
 }
