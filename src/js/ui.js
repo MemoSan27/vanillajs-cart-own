@@ -6,10 +6,11 @@ export const printProducts = ( products ) => {
         const { id, name, price, quantity, image } = item;
         html += `
         <div id="${ id }" class="product">
-        <a class="product__link" href="details.html" target="_blank">
+        <div class="product__link">
             <figure class="product__img">
                 <img src="${ image }" alt="Shirt Image">
                 <p class="product__stock"> Stock: <span class="product__span"> ${quantity} Unidades </span> </p>
+                <a href="details.html" target="_blank" class="btn__view"> Ver Detalle </a>
             </figure>
             <p class="product__description"> ${ name } </p>
             <div class="product__colors">
@@ -17,7 +18,7 @@ export const printProducts = ( products ) => {
                 <div class="product__rojo">R</div>
             </div>
             <p class="product__price"> USD $${ price }.00 </p>
-        </a>
+        </div>
         </div>
         `;
         
@@ -25,6 +26,19 @@ export const printProducts = ( products ) => {
     print.innerHTML = html;
 }
 
-export const printDetails = (products) => {
+export const getSelector = (products) => {
+    const read = document.querySelector('.products');
 
+    read.addEventListener('click', (e) => {
+        
+        const btnView = e.target.classList.contains('btn__view');
+        if(!btnView){
+            return;
+        }
+        const id = +e.target.closest('.product').id;
+        console.log(id);
+        const article = products.find( product => product.id === id);
+        console.log(article);
+        return article;
+    });
 }

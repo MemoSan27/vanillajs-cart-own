@@ -173,10 +173,10 @@ a{
 .product__stock{
     font-size: 1.3rem;
     color: blue;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 .product__span{
-    color: var(--main);
+    color: #85bb65;
 }
 .product:hover{
     box-shadow: 2px 3px 17px -2px rgba(67,67,67,0.79);
@@ -184,6 +184,22 @@ a{
 }
 .product__img{
     width: 100%;
+}
+.btn__view{
+    padding: 1rem;
+    border: none;
+    background-color: var(--main);
+    color: var(--white);
+    width: 60%;
+    align-self: center;
+    transition: background-color;
+    transition-duration: 300ms;
+    font-weight: 400;
+    display: inline-block;
+}
+.btn__view:hover{
+    cursor: pointer;
+    background-color: #e61c30;
 }
 .product__description{
     line-height: 1.5;
@@ -210,5 +226,5 @@ a{
 }
 .product__price{
     align-self: end;
-    color: #85bb65
+    color: #85bb65;
 }
