@@ -1,7 +1,8 @@
 import { database, getApi } from '../js/logic.js';
+import { printProducts } from '../js/ui.js';
 
 const main = async() => {
     const db = await database();
-    console.log(db);
+    printProducts(db.products);
 }
 main();
