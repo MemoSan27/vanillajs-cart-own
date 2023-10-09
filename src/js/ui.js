@@ -9,6 +9,7 @@ export const printProducts = ( products ) => {
         <a class="product__link" href="details.html" target="_blank">
             <figure class="product__img">
                 <img src="${ image }" alt="Shirt Image">
+                <p class="product__stock"> Stock: <span class="product__span"> ${quantity} Unidades </span> </p>
             </figure>
             <p class="product__description"> ${ name } </p>
             <div class="product__colors">
@@ -22,4 +23,8 @@ export const printProducts = ( products ) => {
         
     }
     print.innerHTML = html;
+}
+
+export const printDetails = (products) => {
+
 }
