@@ -61,7 +61,7 @@ a{
     background-color: var(--lightGray);
     position: fixed;
     width: 100%;
-    z-index: 10;
+    z-index: 20;
 }
 @media ( min-width: 768px ) { 
     .nav__bar{
@@ -227,12 +227,18 @@ a{
     border: none;
     background-color: var(--main);
     color: var(--white);
-    width: 60%;
+    width: 70%;
     align-self: center;
     transition: background-color;
     transition-duration: 300ms;
     font-weight: 400;
     display: inline-block;
+    font-size: 1.3rem;
+}
+@media ( min-width: 500px ) { 
+    .btn__view{
+        font-size: 1.6rem;
+    }
 }
 .btn__view:hover{
     cursor: pointer;

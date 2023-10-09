@@ -23,7 +23,7 @@ img{
     padding-left: 3.3rem;
     align-items: center;
     background-color: var(--lightGray);
-    
+    z-index: 11;
 }
 .cart-modal{
     z-index: 15;
@@ -237,4 +237,9 @@ img{
 }
 .detail-product__span{
     color: var(--main);
+}
+.detail-product__cantidad{
+    padding: 1rem 0 1rem 1rem;
+    text-align: center;
+    border: 1px solid var(--main);
 }
