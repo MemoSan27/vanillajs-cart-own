@@ -199,11 +199,17 @@ img{
     width: 87%;
     align-self: center;
     margin-top: 2.5rem;
+    transition: background-color;
+    transition-duration: 300ms;
 }
 @media ( min-width: 768px ) { 
     .detail-product__btn-add{
         width: 70%;
     }
+}
+.detail-product__btn-add:hover{
+    cursor: pointer;
+    background-color: #e61c30;
 }
 .detail-product__description{
     line-height: 1.2;
