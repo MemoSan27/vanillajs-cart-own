@@ -37,9 +37,7 @@ export const getSelector = (products) => {
             return;
         }
         const id = +e.target.closest('.product').id;
-        console.log(id);
         const article = products.find( product => product.id === id);
-        console.log(article);
         localStorage.setItem('detail', JSON.stringify(article));
         return article;
     });

@@ -174,9 +174,8 @@ img{
     }
 }
 .detail-product__img-2{
-  
     width: 30%;
-    border: 1px solid black;
+    border: 1px solid var(--main);
 }
 .tallas{
     display: flex;
@@ -185,7 +184,7 @@ img{
     
 }
 .talla{
-    border: 1px solid black;
+    border: 1px solid var(--main);
     display: inline-block;
     padding: 1rem;
     width: 7rem;

@@ -24,7 +24,7 @@ export const printDetail = (detail) => {
                         <p class="detail-product__label"> Stock actual: <span class="detail-product__span"> ${ quantity } Unidades</span></p>
                             
                         <span> Cantidad a comprar: </span> <br>
-                        <input class="detail-product__cantidad" type="number" min="1" max="${ quantity }" />
+                        <input placeholder="0" class="detail-product__cantidad" type="number" min="1" max="${ quantity }" />
                             
                     </div>
                 </div>
