@@ -22,9 +22,11 @@ img{
     gap: 3rem;
     padding-left: 3.3rem;
     align-items: center;
-    z-index: 11;
     background-color: var(--lightGray);
     
+}
+.cart-modal{
+    z-index: 15;
 }
 @media ( min-width: 768px ) { 
     .nav__back{
