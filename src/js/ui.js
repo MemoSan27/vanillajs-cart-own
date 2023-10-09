@@ -44,3 +44,4 @@ export const getSelector = (products) => {
         return article;
     });
 }
+
