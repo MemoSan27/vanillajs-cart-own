@@ -34,20 +34,38 @@ export const addToCart = (db) => {
             const article = db.products.find( product => product.id === id);
             
             if(article.quantity === 0){
-                return alert('Producto agotado');
+                return Swal.fire( {
+                    title: '¡Producto agotado!', 
+                    text: 'Lo sentimos, este producto se encuentra sin stock por el momento',
+                    icon: 'error',
+                });
+                
             }
 
             if( quantity.value === '' ){
-                return alert('Por favor ingrese un valor a partir de 1 pieza');
+                return Swal.fire( {
+                    title: '¡Agrega una cantidad!', 
+                    text: 'Por favor ingresa por lo menos 1 pieza a tu carrito',
+                    icon: 'error',
+                });
             }
 
             if(quantity.value > article.quantity){
-                return alert('La cantidad de articulos que esta solicitando sobrepasan nuestro stock')
+                return Swal.fire( {
+                    title: 'Stock insuficiente', 
+                    text: 'La cantidad de articulos que esta solicitando sobrepasan nuestro stock',
+                    icon: 'warning',
+                });
             }
             
             if(article.id in db.cart){
                 if((article.quantity - db.cart[article.id].amount) < +quantity.value){
-                    return alert(`No puedes agregar mas de ${ db.cart[id].quantity } piezas a tu carrito`);
+                    return Swal.fire( {
+                        title: 'Stock insuficiente', 
+                        text: `No puedes agregar mas de ${ db.cart[id].quantity } piezas a tu carrito`,
+                        icon: 'error',
+                    });
+                    
                 }
                 db.cart[article.id].amount += +quantity.value;
             }else{
@@ -57,7 +75,10 @@ export const addToCart = (db) => {
             localStorage.setItem('cart', JSON.stringify(db.cart));
             printCart(db.cart);
             printTotals(db);
-            alert('Se han añadido sus productos al carrito');
+            Swal.fire( {
+                title: `Se han añadido ${ quantity.value } ${ article.category}s a tu carrito` , 
+                icon: 'success',
+            });
         }
     })
 }
