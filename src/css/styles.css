@@ -51,6 +51,12 @@ a{
     text-decoration: none;
     color: black;
 }
+button{
+    cursor: pointer;
+}
+[name]{
+    cursor: pointer;
+}
 /** Body **/
 .nav__bar{
     height: 5rem;
