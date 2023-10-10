@@ -61,8 +61,8 @@ export const handleTotalsDetails = (db) => {
         const numProducts = Object.values(db.cart).length;
         if(!numProducts){
             return Swal.fire( {
-                title: '¡Debes agregar productos a tu carrito!', 
-                text: '¡Tu carrito esta vacio!',
+                title: '¡Tu carrito esta vacio!', 
+                text: '¡Debes agregar productos a tu carrito!',
                 icon: 'warning',
             });
         }
