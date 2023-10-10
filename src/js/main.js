@@ -1,5 +1,5 @@
-import { addToCart, database, getApi } from '../js/logic.js';
-import { getSelector, printProducts } from '../js/ui.js';
+import { database } from '../js/logic.js';
+import { getSelector, printCart, printProducts, printTotals } from '../js/ui.js';
 import { handels } from './handels.js';
 
 const main = async() => {
@@ -7,6 +7,7 @@ const main = async() => {
     handels();
     printProducts(db.products);
     getSelector(db.products);
-    
+    printCart(db.cart);
+    printTotals(db);
 }
 main();

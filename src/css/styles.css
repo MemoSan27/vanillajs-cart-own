@@ -181,6 +181,9 @@ button{
     background-color: var(--main);
     color: white;
 }
+.cart-modal__buttons{
+    margin-top: 1rem;
+}
 .fw{
     color: var(--white);
     font-weight: 500;
