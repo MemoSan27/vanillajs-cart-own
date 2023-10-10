@@ -42,7 +42,7 @@ export const addToCart = (db) => {
                 
             }
 
-            if( quantity.value === '' ){
+            if( quantity.value === '' || quantity.value === '0'){
                 return Swal.fire( {
                     title: '¡Agrega una cantidad!', 
                     text: 'Por favor ingresa por lo menos 1 pieza a tu carrito',
