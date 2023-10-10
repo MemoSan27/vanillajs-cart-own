@@ -1,4 +1,4 @@
-import { printCart, printTotals } from "./ui.js";
+import { printCart, printProducts, printTotals } from "./ui.js";
 
 export const getApi = async() => {
     const URL = 'https://ecommercebackend.fundamentos-29.repl.co/';
@@ -55,5 +55,25 @@ export const addToCart = (db) => {
 }
 
 export const filterProducts = (products) => {
+    const list = document.getElementById('choose1');
     
+    list.addEventListener('change', (e) => {
+        const value = +e.target.value;
+        
+        if(value === 1){
+            printProducts(products);
+        }
+        if(value === 2){
+            const shirts = products.filter( product => product.category === 'shirt');
+            printProducts(shirts);
+        }
+        if(value === 3){
+            const hoddies = products.filter( product => product.category === 'hoddie');
+            printProducts(hoddies);
+        }
+        if(value === 4){
+            const sweaters = products.filter( product => product.category === 'sweater');
+            printProducts(sweaters);
+        }
+    });
 }
