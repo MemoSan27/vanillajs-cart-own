@@ -78,6 +78,7 @@ export const printCart = (cartProducts) => {
 
 export const printTotals = (db) => {
     const cartTotal = document.querySelector('.cart-modal__desc');
+    const cartIcon = document.querySelector('.nav__counter-text');
     let cantidad = 0;
     let totales = 0;
 
@@ -94,5 +95,6 @@ export const printTotals = (db) => {
     `;
 
     cartTotal.innerHTML = html;
+    cartIcon.innerHTML = cantidad;
 }
 

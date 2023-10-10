@@ -88,6 +88,12 @@ button{
 .nav__cart-btn{
     position: relative;
 }
+.header__logo{
+    transition: all 300ms;
+}
+.header__logo:hover{
+    transform: scale(1.2);
+}
 .cart-modal{
     position: absolute;
     background-color:#85bb65;
@@ -201,7 +207,8 @@ button{
     top: 4px;
     left: -13px;
     background-color: var(--main);
-    width: 18px;
+    width: 2rem;
+    height: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -209,7 +216,7 @@ button{
 }
 .nav__counter-text{
     color: var(--lightGray);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 .nav__cart-btn:hover{
     cursor: pointer;
