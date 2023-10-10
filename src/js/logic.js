@@ -37,9 +37,17 @@ export const addToCart = (db) => {
                 return alert('Producto agotado');
             }
 
+            if( quantity.value === '' ){
+                return alert('Por favor ingrese un valor a partir de 1 pieza');
+            }
+
+            if(quantity.value > article.quantity){
+                return alert('La cantidad de articulos que esta solicitando sobrepasan nuestro stock')
+            }
+            
             if(article.id in db.cart){
                 if((article.quantity - db.cart[article.id].amount) < +quantity.value){
-                    return alert(`Solo contamos con ${ db.cart[id].quantity } piezas restantes`);
+                    return alert(`No puedes agregar mas de ${ db.cart[id].quantity } piezas a tu carrito`);
                 }
                 db.cart[article.id].amount += +quantity.value;
             }else{

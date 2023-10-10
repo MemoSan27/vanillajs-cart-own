@@ -1,6 +1,6 @@
 import { addToCart, database } from '../js/logic.js';
-import { printDetail } from '../js/detail.js';
-import { handels } from './handels.js';
+import { handleTotalsDetails, printDetail } from '../js/detail.js';
+import { handels, handleCart } from './handels.js';
 import { printCart, printTotals } from './ui.js';
 
 const main2 = async() => {
@@ -10,5 +10,7 @@ const main2 = async() => {
     addToCart(db);
     printCart(db.cart);
     printTotals(db);
+    handleCart(db);
+    handleTotalsDetails(db);
 }
 main2();

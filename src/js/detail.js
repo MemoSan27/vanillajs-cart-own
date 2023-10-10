@@ -1,8 +1,12 @@
+import { printCart, printTotals } from "./ui.js";
+
 export const printDetail = (detail) => {
     const detailProduct = document.querySelector('.detail-product');
+    
     let html = '';
 
     const { category, description, id, image, name, price, quantity } = detail;
+    
     html += `
     <div class="detail-product__card">
             <div class="detail-product__flex">
@@ -47,4 +51,35 @@ export const printDetail = (detail) => {
     
     detailProduct.innerHTML = html;
 
+}
+
+export const handleTotalsDetails = (db) => {
+    const btnBuy = document.querySelector('.btnBuy');
+    const quantRefresh = document.querySelector
+    
+    btnBuy.addEventListener('click', (e) => { 
+        const numProducts = Object.values(db.cart).length;
+        if(!numProducts){
+            return alert('Debes agregar productos a tu carrito');
+        }
+        const response = confirm('¿Estas seguro de realizar tu compra?');
+        if(!response){
+            return;
+        }        
+        for( const key in db.cart ){
+            const idCarrito = db.cart[key].id;
+            const idProductos = db.products[key-1].id;
+
+            if(idCarrito === idProductos){
+                db.products[key-1].quantity -= db.cart[key].amount;
+            }
+        }
+        db.cart = {};
+        localStorage.setItem('products', JSON.stringify(db.products));
+        localStorage.setItem('cart', JSON.stringify(db.cart));
+        
+        printCart(db.cart);
+        printTotals(db);
+        alert('Gracias por su compra!');
+    });
 }

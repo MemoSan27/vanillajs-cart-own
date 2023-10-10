@@ -8,10 +8,10 @@ export const printProducts = ( products ) => {
         html += `
         <div id="${ id }" class="product">
         <div class="product__link">
-            <figure class="product__img">
+            <figure class="product__img if${quantity}">
                 <img src="${ image }" alt="Shirt Image">
                 <p class="product__stock"> Stock: <span class="product__span"> ${quantity} Unidades </span> </p>
-                <a href="details.html" target="_blank" class="btn__view"> Ver Detalle </a>
+                <a id="btnV" href="details.html" class="btn__view"> Ver Detalle </a>
             </figure>
             <p class="product__description"> ${ name } </p>
             <div class="product__colors">
@@ -95,3 +95,4 @@ export const printTotals = (db) => {
 
     cartTotal.innerHTML = html;
 }
+
