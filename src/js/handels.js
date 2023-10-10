@@ -20,14 +20,21 @@ export const handleCart = (db) => {
         if(less){
             const id = +e.target.closest('.cart-modal__product').id;
             if(db.cart[id].amount === 1){
-                return alert('Uno es la cantidad minima que puedes comprar');
+                return Swal.fire( {
+                    title: '¡No puedes comprar menos de 1 producto!', 
+                    icon: 'warning',
+                });
             }
             db.cart[id].amount--;
         }
         if(plus){
             const id = +e.target.closest('.cart-modal__product').id;
             if(db.cart[id].amount === db.cart[id].quantity){
-                return alert(`Solo contamos con ${ db.cart[id].quantity } piezas restantes en bodega`);
+                return Swal.fire( {
+                    title:  'Limite alcanzado',
+                    text: `Solo contamos con existencia de ${ db.cart[id].quantity } piezas`,
+                    icon: 'warning',
+                });
             }
             db.cart[id].amount++;
         }
@@ -51,7 +58,11 @@ export const handleTotals = (db) => {
     btnBuy.addEventListener('click', (e) => { 
         const numProducts = Object.values(db.cart).length;
         if(!numProducts){
-            return alert('Debes agregar productos a tu carrito');
+            return Swal.fire( {
+                title: '¡Debes agregar productos a tu carrito!', 
+                text: '¡Tu carrito esta vacio!',
+                icon: 'warning',
+            });
         }
         const response = confirm('¿Estas seguro de realizar tu compra?');
         if(!response){
@@ -71,6 +82,10 @@ export const handleTotals = (db) => {
         printProducts(db.products);
         printCart(db.cart);
         printTotals(db);
-        alert('Gracias por su compra!');
+        Swal.fire(
+            'Operacion exitosa',
+            '¡Gracias por tu compra!',
+            'success'
+        );
     });
 }

@@ -60,7 +60,11 @@ export const handleTotalsDetails = (db) => {
     btnBuy.addEventListener('click', (e) => { 
         const numProducts = Object.values(db.cart).length;
         if(!numProducts){
-            return alert('Debes agregar productos a tu carrito');
+            return Swal.fire( {
+                title: '¡Debes agregar productos a tu carrito!', 
+                text: '¡Tu carrito esta vacio!',
+                icon: 'warning',
+            });
         }
         const response = confirm('¿Estas seguro de realizar tu compra?');
         if(!response){
@@ -80,6 +84,10 @@ export const handleTotalsDetails = (db) => {
         
         printCart(db.cart);
         printTotals(db);
-        alert('Gracias por su compra!');
+        Swal.fire(
+            'Operacion exitosa',
+            '¡Gracias por tu compra!',
+            'success'
+        );
     });
 }
