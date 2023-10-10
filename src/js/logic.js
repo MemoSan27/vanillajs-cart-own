@@ -20,3 +20,34 @@ export const database = async() => {
     };
     return db;
 }
+
+export const addToCart = (db) => {
+    const add = document.querySelector('.detail-product__card');
+    const quantity = document.querySelector('.detail-product__cantidad');
+    let difference = 0;
+    
+    
+    add.addEventListener('click', (e) => {
+        const btnAdd = e.target.classList.contains('detail-product__btn-add');
+        if(btnAdd){
+            const id = +e.target.closest('.detail-product__details').id;
+            const article = db.products.find( product => product.id === id);
+            
+            if(article.quantity === 0){
+                return alert('Producto agotado');
+            }
+
+            if(article.id in db.cart){
+                if(difference < +quantity.value){
+                    return alert(`Solo contamos con ${ db.cart[id].quantity } piezas restantes`);
+                }
+                db.cart[article.id].amount += +quantity.value;
+            }else{
+                article.amount = +quantity.value;
+                db.cart[article.id] = article;
+            }
+            difference = article.quantity - db.cart[article.id].amount;
+            localStorage.setItem('cart', JSON.stringify(db.cart));
+        }
+    })
+}

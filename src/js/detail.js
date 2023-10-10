@@ -10,7 +10,7 @@ export const printDetail = (detail) => {
                 <img class="detail-product__img" src="${ image }" alt="Shirt Image">
             </div>
 
-            <div class="detail-product__details">
+            <div id="${ id }" class="detail-product__details">
                 <h2 class="detail-product__description"> ${ name } </h2>
                 <hr>
                 <p class="detail-product__text"> Descripción: </p>
@@ -25,6 +25,7 @@ export const printDetail = (detail) => {
                             
                         <span> Cantidad a comprar: </span> <br>
                         <input placeholder="0" class="detail-product__cantidad" type="number" min="1" max="${ quantity }" />
+                        
                             
                     </div>
                 </div>
@@ -39,12 +40,11 @@ export const printDetail = (detail) => {
                     <p class="talla"> 3XL </p>
                 </div>
                 <button class="detail-product__btn-add"> Agregar al carrito </button>
+                
             </div>
         </div>
     `;
-
-    console.log(html);
-
+    
     detailProduct.innerHTML = html;
 
 }

@@ -243,3 +243,6 @@ img{
     font-weight: 700;
     border: 1px solid var(--main);
 }
+.detail-product__id{
+    font-size: 0;
+}
