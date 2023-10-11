@@ -306,6 +306,12 @@ button{
         top: 24%;
     }
 }
+@media ( min-width: 992px ) { 
+    .product__img.if0::after{
+        width: 17rem;
+        top: 24%;
+    }
+}
 .product__link{
     display: flex;
     flex-direction: column;
@@ -354,7 +360,7 @@ button{
 }
 .product__description{
     line-height: 1.5;
-    height: 8.7rem;
+    height: 11rem;
 }
 @media ( min-width: 768px ) { 
     .product__description{
