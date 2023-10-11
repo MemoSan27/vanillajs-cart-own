@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://db.onlinewebfonts.com/c/0d49fc455f4a8951a42daf952412a713?family=Helvetica+Neue+Regular" rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/0d49fc455f4a8951a42daf952412a713?family=Helvetica+Neue+Regular"
+        rel="stylesheet">
     <link rel="stylesheet" href="src/css/styles.css">
-    <script src="/src/js/main.js" type="module" defer></script>
+    <link rel="stylesheet" href="src/css/styles-details.css">
+    <script src="/src/js/main2.js" type="module" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <title>Academlo Online Store</title>
 </head>
+
 <body>
     <nav class="nav">
         <div class="nav__bar">
-            <a href="https://www.academlo.com">
-                <img class="nav__logo-academlo" src="src/img/logo-nav.png" alt="Academlo Logo">
-            </a>
+            <img class="nav__logo-academlo" src="src/img/logo-nav.png" alt="Academlo Logo">
 
             <figure class="nav__cart-btn">
                 <img class="nav__logo-cart" src="src/img/icons8-buy-48.png" alt="Cart Logo">
@@ -44,28 +46,21 @@
         </div> <!-- TERMINA NAVBAR -->
     </nav>
 
-    <a href="https://www.academlo.com">
-        <header class="header">
-            <img class="header__logo" src="src/img/logo-header.png" alt="Academlo Main Logo">
-        </header>
-    </a>
-
-    <nav class="choose container">
-        <h2 class="choose__title"> Todos nuestros productos </h2>
-        <form>
-            <select id="choose1" class="choose__select">
-                <option value="1" class="choose__select-all"> Todos </option>
-                <option value="2" class="choose__select-shirts"> Shirts </option>
-                <option value="3" class="choose__select-hoddies"> Hoddies </option>
-                <option value="4" class="choose__select-sweaters"> Sweaters </option>
-            </select>
-        </form>
-    </nav>
-
-    <main class="products container">
+    <div class="nav__back">
+            <a href="index.html"> 
+                <ion-icon class="nav__icon" name="arrow-back-outline"></ion-icon>
+            </a>
+            <p class="nav__description"> Academlo - Tienda Oficial </p>
+    </div>
+    
+    <main class="detail-product container">
         
     </main>
+
     
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
+
 </html>
