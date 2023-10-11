@@ -354,6 +354,19 @@ button{
 }
 .product__description{
     line-height: 1.5;
+    height: 8.7rem;
+}
+@media ( min-width: 768px ) { 
+    .product__description{
+        line-height: 1.5;
+        height: 5rem;
+    }
+}
+@media ( min-width: 1200px ) { 
+    .product__description{
+        line-height: 1.5;
+        height: 7rem;
+    }
 }
 .product__colors{
     display: flex;
